@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body {
+	background: white;
+	font-family: 'Press Start 2P', cursive;
+	margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Container {
+	width: 100vw;
+	height: 100vh;
+	background-color: #6110ca;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+
+	@media (max-width: 780px) {
+		flex-direction: column;
+		justify-content: center;
+	}
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.game {
+	width: 585px;
+	height: 440px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url("./assets/grass.svg");
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.playArea {
+	align-self: center;
+	border: 5px solid transparent;
+	width: 585px;
+	height: 440px;
+	border: 1px solid black;
+	border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+#fruit {
+	display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gameOver {
+	z-index: 2000;
+	position: absolute;
+	color: white;
+	font-size: 35px;
+}
+
+.playButton {
+	color: white;
+	background: #502c7b;
+	padding: 10px;
+	font-size: 0.9em;
+	color: white;
+	box-shadow: 4px 4px 0px 0px white;
+	font-family: 'Press Start 2P', cursive;
+	font-weight: 700;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	-webkit-box-shadow: 0px 4px 4px 0px rgba(48, 26, 74, 0.63);
+	box-shadow: 0px 4px 4px 0px rgba(48, 26, 74, 0.63);
+}
+
+.gameInformation {
+	background-color: #fafafa;
+	margin: 10px 5px;
+	align-self: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	max-height: 80%;
+	padding: 50px 16px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 4px 13px 0px rgba(48, 26, 74, 0.63);
+	box-shadow: 0px 4px 13px 0px rgba(48, 26, 74, 0.63);
+}
+
+h2 {
+	font-size: 18px;
+	padding: 10px;
 }
