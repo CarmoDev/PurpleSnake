@@ -7,8 +7,10 @@ import Fruit from "./assets/appleLogo.png";
 import Title from "./assets/title.svg";
 
 const fruitAteAudio = require("./assets/fruitAte.mp3");
+const gameOverAudio = require("./assets/morreu.mp3");
 
-const audio = new Audio(fruitAteAudio);
+const fruitEated = new Audio(fruitAteAudio);
+const endAudio = new Audio(gameOverAudio);
 
 const canvasX = 1000;
 const canvasY = 1000;
@@ -66,12 +68,14 @@ function App() {
   function checkCollision(head: number[]) {
     for (let i = 0; i < head.length; i++) {
       if (head[i] < 0 || head[i] * scale >= canvasX) {
+        endAudio.play();
         return true;
       }
     }
 
     for (const s of snake) {
       if (head[0] === s[0] && head[1] === s[1]) {
+        endAudio.play();
         return true;
       }
     }
@@ -84,7 +88,7 @@ function App() {
 
     if (newSnake[0][0] === apple[0] && newSnake[0][1] === apple[1]) {
       let newApple = coord;
-      audio.play();
+      fruitEated.play();
       setScore(score + 1);
       setApple(newApple);
 
@@ -147,7 +151,12 @@ function App() {
           height={`${canvasY}px`}
         />
 
-        {gameOver && <div className="gameOver">Game Over!</div>}
+        {gameOver && (
+          <div className="gameOver">
+            <div>Game Over!</div>
+            <h2>Score: {score}</h2>
+          </div>
+        )}
       </div>
 
       <div className="gameInformation">

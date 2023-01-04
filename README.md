@@ -1,3 +1,5 @@
+ <img src=”./src/assets/title.svg”>
+
 PurpleSnake é uma versão do tão famoso jogo da cobrinha, design desenvolvido e idealizado por mim mesmo e trilha sonora desenolvida por @RVSAKIL.
 
 É possível jogar através do link:
