@@ -11,3 +11,5 @@ Caso deseje instalar para rodar diretamente na sua máquina:
 1. Rodar NPM INSTALL ou YARN INSTALL
 2. Rodar Yarn Start ou NPM Start
 3. SE DIVIRTA!
+
+OBS: VERSÂO EXCLUSIVA DESKTOP
